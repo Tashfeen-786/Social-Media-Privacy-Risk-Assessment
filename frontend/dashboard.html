@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Dashboard · Social Media Privacy Risk Assessment Framework</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <div class="brand"><div class="logo">&#128737;</div>
+    <div>Privacy Risk Assessment<small>Defensive Cybersecurity Framework</small></div></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="assessment.html">Assessment</a>
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="/api/privacy-checklist?fmt=html" target="_blank">Checklist</a>
+    <a href="/docs" target="_blank">API Docs</a>
+  </div>
+</div></nav>
+
+<div class="container">
+  <div class="section" style="margin-top:28px">
+    <div class="section-head">
+      <div><h2>Privacy Risk Dashboard</h2>
+        <p id="dashMeta">Anonymised aggregate analytics across stored assessments — no personal data.</p>
+        <p style="margin-top:6px"><span class="chip" style="background:rgba(234,179,8,.15);
+           color:#facc15;border-color:rgba(234,179,8,.4)">SYNTHETIC / DEMONSTRATION DATA</span></p></div>
+      <div>
+        <a class="btn btn-primary btn-sm" href="assessment.html">&#9654;&nbsp; Start Privacy Assessment</a>
+        <a class="btn btn-ghost btn-sm" href="/api/privacy-checklist?fmt=html" target="_blank">Privacy checklist</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="dashError" class="error hidden"></div>
+  <div class="grid g5" id="cards"><div class="loading"><div class="spinner"></div><span>Loading dashboard…</span></div></div>
+
+  <div class="section grid g2">
+    <div class="card"><h3>1. Category Risk Scores (average)</h3>
+      <p>Mean assessed risk per category across all stored assessments.</p>
+      <div class="chart-box tall"><canvas id="catChart"></canvas></div></div>
+    <div class="card"><h3>2. Privacy Risk Distribution</h3>
+      <p>How assessments are distributed across the four risk levels.</p>
+      <div class="chart-box tall"><canvas id="distChart"></canvas></div></div>
+  </div>
+
+  <div class="section grid g2">
+    <div class="card"><h3>3. Top Privacy Weaknesses</h3>
+      <p>Most frequently detected finding types.</p>
+      <div class="chart-box tall"><canvas id="weakChart"></canvas></div></div>
+    <div class="card"><h3>4. Account Security Controls</h3>
+      <p>Adoption of key account-security controls in the synthetic population.</p>
+      <div class="chart-box tall"><canvas id="ctrlChart"></canvas></div></div>
+  </div>
+
+  <div class="section grid g2">
+    <div class="card"><h3>7. Privacy Exposure Rubric (Model B) — average points</h3>
+      <p>Average contribution of each of the 8 exposure dimensions against its cap.</p>
+      <div class="chart-box tall"><canvas id="rubricChart"></canvas></div></div>
+    <div class="card"><h3>8. Model A vs Model B</h3>
+      <p>Average 10-category assessment score compared with the average 8-category
+         exposure score. The two models are complementary, not equivalent.</p>
+      <div class="chart-box tall"><canvas id="modelChart"></canvas></div></div>
+  </div>
+
+  <div class="section grid g2">
+    <div class="card"><h3>5. Digital Footprint Risk</h3>
+      <p>Footprint-related categories compared with the overall average.</p>
+      <div class="chart-box"><canvas id="footChart"></canvas></div></div>
+    <div class="card"><h3>6. Privacy Improvement Comparison</h3>
+      <p>Demo profile before vs after the recommended improvement set (framework simulation).</p>
+      <div class="chart-box"><canvas id="impChart"></canvas></div></div>
+  </div>
+
+  <div class="section card">
+    <h3>Recent assessments (privacy-minimised records)</h3>
+    <p>Only assessment id, score, level and timestamp are stored.</p>
+    <div style="overflow-x:auto"><table id="recentTable"></table></div>
+  </div>
+
+  <div class="section warn" id="dashDisclaimer"></div>
+
+  <footer class="site">Social Media Privacy Risk Assessment Framework · v1.0 ·
+    Defensive cybersecurity &amp; privacy education · Synthetic / self-reported data only</footer>
+</div>
+
+<script src="js/chart.umd.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

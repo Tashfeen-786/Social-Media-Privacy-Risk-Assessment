@@ -1,0 +1,7 @@
+[
+  {"id": "h1", "text": "Finished a good book today.", "created_at": "2026-07-11T10:00:00Z",
+   "hashtags": [], "mentions": [], "geo": null,
+   "media": {"type": "image", "has_faces": false, "is_child_present": false, "exif": {}}},
+  {"id": "h2", "text": "Trying a new recipe this weekend.", "created_at": "2026-07-13T10:00:00Z",
+   "hashtags": [], "mentions": [], "geo": null, "media": {"type": "none"}}
+]

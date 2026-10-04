@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Environment / secrets
+.env
+*.key
+*.pem
+
+# Database & generated artefacts
+*.db
+*.sqlite3
+data/privacy_assessment.db
+data/test_privacy_assessment.db
+reports/*.html
+reports/*.pdf
+reports/*.csv
+!reports/.gitkeep
+
+# Node / React (Vite)
+node_modules/
+frontend-react/node_modules/
+frontend-react/dist/
+dist/
+.vite/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

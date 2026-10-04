@@ -1,0 +1,16 @@
+{
+  "_notice": "SYNTHETIC DEMONSTRATION DATA - fictional hardened profile.",
+  "platform": "instagram",
+  "username": "demo.private.acct",
+  "display_name": "Demo Hardened (fictional)",
+  "bio": "Runner. Reader. Contact via website form.",
+  "website": null,
+  "email": null,
+  "phone": null,
+  "birthday": null,
+  "location": null,
+  "privacy": {"account_private": true, "show_activity": false, "allow_message_requests": false},
+  "links": [],
+  "site_meta": {"has_privacy_policy": true, "third_party_scripts": []},
+  "handle_reused_elsewhere": false
+}

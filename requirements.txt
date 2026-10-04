@@ -1,0 +1,15 @@
+# Social Media Privacy Risk Assessment Framework - Python 3.10+
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+python-dotenv==1.0.1
+python-multipart==0.0.20
+httpx==0.28.1
+pytest==8.3.4
+reportlab==4.2.5
+Pillow==11.0.0
+matplotlib==3.10.0
+
+# Optional local vision helper (face COUNT only, never identification).
+# The application degrades gracefully if this is not installed.
+opencv-python-headless==4.10.0.84

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Assessment · Social Media Privacy Risk Assessment Framework</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <div class="brand"><div class="logo">&#128737;</div>
+    <div>Privacy Risk Assessment<small>Defensive Cybersecurity Framework</small></div></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="assessment.html" class="active">Assessment</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="/api/privacy-checklist?fmt=html" target="_blank">Checklist</a>
+    <a href="/docs" target="_blank">API Docs</a>
+  </div>
+</div></nav>
+
+<div class="container">
+
+  <!-- ====================== QUESTIONNAIRE ====================== -->
+  <section id="quizView">
+    <div class="section" style="margin-top:28px">
+      <div class="section-head">
+        <div><h2>Privacy Assessment Questionnaire</h2>
+          <p id="qMeta">Loading questionnaire…</p></div>
+        <div>
+          <button class="btn btn-ghost btn-sm" id="loadDemo">Load demo profile</button>
+          <button class="btn btn-ghost btn-sm" id="clearAll">Clear</button>
+        </div>
+      </div>
+      <div class="notice"><b>Privacy notice.</b> This questionnaire never asks for your actual phone
+        number, e-mail address, postal address, birth date or password — only whether such
+        information is <i>publicly visible</i>. Raw answers are never stored.</div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress"><span id="progressBar"></span></div>
+      <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:12.5px;color:var(--muted)">
+        <span id="progressText">0 of 0 answered</span>
+        <span>Minimum 60% required to submit</span>
+      </div>
+    </div>
+
+    <div id="questions" style="margin-top:20px"></div>
+
+    <div id="submitError" class="error hidden" style="margin-bottom:14px"></div>
+    <div style="margin:22px 0 40px;display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn btn-primary" id="submitBtn" disabled>&#9654;&nbsp; Calculate Privacy Risk</button>
+      <span style="color:var(--muted);font-size:13px;align-self:center">
+        Deterministic scoring · no black box · nothing personal is transmitted</span>
+    </div>
+  </section>
+
+  <!-- ========================= RESULTS ========================= -->
+  <section id="resultView" class="hidden">
+    <div class="section" style="margin-top:28px">
+      <div class="section-head">
+        <div><h2>Assessment Results</h2><p id="resMeta"></p></div>
+        <div>
+          <button class="btn btn-ghost btn-sm" id="reportHtml">Download HTML report</button>
+          <button class="btn btn-ghost btn-sm" id="reportPdf">Download PDF report</button>
+          <button class="btn btn-ghost btn-sm" id="backBtn">Edit answers</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- top cards -->
+    <div class="grid g3" id="topCards"></div>
+
+    <!-- charts -->
+    <div class="section grid g2">
+      <div class="card"><h3 id="radarTitle">Privacy Risk Radar — category exposure</h3>
+        <p>Higher value = higher assessed risk.</p>
+        <div class="chart-box tall"><canvas id="radarChart"></canvas></div></div>
+      <div class="card"><h3>Category Risk Scores</h3>
+        <p>Each category scored 0–100 with the configured weighting applied to the total.</p>
+        <div class="chart-box tall"><canvas id="catChart"></canvas></div></div>
+    </div>
+
+    <!-- exposure rubric (MODEL B) -->
+    <div class="section" id="rubricCard">
+      <div class="section-head"><div><h2>Privacy Exposure Rubric (Model B — 8 categories)</h2>
+        <p>Capped additive points per exposure dimension · final score = min(100, sum).</p></div>
+        <div id="rubricBadge"></div></div>
+      <div class="grid g2">
+        <div class="card"><h3>Exposure category contributions</h3>
+          <p>Each bar shows points awarded against that category's maximum.</p>
+          <div class="chart-box tall"><canvas id="rubricChart"></canvas></div></div>
+        <div class="card"><h3>Rubric breakdown</h3>
+          <div style="overflow-x:auto"><table id="rubricTable"></table></div></div>
+      </div>
+      <div class="notice" style="margin-top:14px" id="methodologyNote"></div>
+    </div>
+
+    <!-- category table -->
+    <div class="section card" id="catTableCard">
+      <h3>Category score breakdown &amp; weighting</h3>
+      <div style="overflow-x:auto"><table id="catTable"></table></div>
+    </div>
+
+    <!-- findings -->
+    <div class="section card" id="findingsCard">
+      <h3>Top Privacy Findings</h3>
+      <p>Each finding includes its category, severity, explanation and recommended action.</p>
+      <div style="overflow-x:auto"><table id="findTable"></table></div>
+    </div>
+
+    <!-- recommendations -->
+    <div class="section card" id="recCard">
+      <h3>Personalised Recommendations</h3>
+      <p>Prioritised as IMMEDIATE, IMPORTANT and GOOD PRACTICE.</p>
+      <div style="overflow-x:auto"><table id="recTable"></table></div>
+    </div>
+
+    <!-- simulator -->
+    <div class="section" id="simCard">
+      <div class="section-head"><div><h2>Privacy Improvement Simulator</h2>
+        <p>“What happens if I improve my settings?” — <b>FRAMEWORK SIMULATION</b></p></div>
+        <button class="btn btn-primary btn-sm" id="simRun">Run simulation</button></div>
+      <div class="warn" style="margin-bottom:14px"><b>FRAMEWORK SIMULATION.</b> The simulated
+        reduction shows how this educational model re-scores the same questionnaire after the
+        selected changes. It does not guarantee real-world safety.</div>
+      <div class="sim-grid">
+        <div class="sim-col"><div class="k" style="color:var(--muted);font-size:11.5px;
+             letter-spacing:.09em;text-transform:uppercase;font-weight:700">Current risk</div>
+          <div class="sim-score" id="simCurrent">–</div>
+          <div id="simCurrentLevel" style="margin-top:10px"></div>
+          <div style="margin-top:14px;color:var(--muted);font-size:13px" id="simCurrentFindings"></div>
+        </div>
+        <div class="sim-col"><div style="color:var(--muted);font-size:11.5px;letter-spacing:.09em;
+             text-transform:uppercase;font-weight:700;margin-bottom:8px">Select improvements</div>
+          <div id="impList" style="max-height:330px;overflow:auto"></div></div>
+        <div class="sim-col"><div style="color:var(--muted);font-size:11.5px;letter-spacing:.09em;
+             text-transform:uppercase;font-weight:700">Simulated new risk</div>
+          <div class="sim-score" id="simNew">–</div>
+          <div id="simNewLevel" style="margin-top:10px"></div>
+          <div id="simReduction" style="margin-top:14px;font-size:14px"></div>
+          <div id="simChanges" style="margin-top:12px;font-size:12.5px;color:var(--muted)"></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px"><h3>Privacy Improvement Comparison</h3>
+        <div class="chart-box"><canvas id="simChart"></canvas></div></div>
+    </div>
+
+    <div class="section warn" id="resDisclaimer"></div>
+  </section>
+
+  <footer class="site">Social Media Privacy Risk Assessment Framework · v1.0 ·
+    Defensive cybersecurity &amp; privacy education · Synthetic / self-reported data only</footer>
+</div>
+
+<script src="js/chart.umd.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/assessment.js"></script>
+</body>
+</html>

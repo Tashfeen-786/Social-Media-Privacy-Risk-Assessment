@@ -1,0 +1,18 @@
+{
+  "_notice": "SYNTHETIC DEMONSTRATION DATA - fictional person, not a real account.",
+  "platform": "instagram",
+  "username": "demo.oversharer",
+  "display_name": "Demo Oversharer (fictional)",
+  "bio": "Product @ FICTIONAL-CORP - runner - parent - demo.contact@example.invalid",
+  "website": "https://demo-portfolio.invalid",
+  "email": "demo.contact@example.invalid",
+  "phone": "+1 555 0100 199",
+  "birthday": "1996-04-02",
+  "location": "Demo City, Fictionland",
+  "privacy": {"account_private": false, "show_activity": true, "allow_message_requests": true},
+  "links": ["https://linktr.ee/demo.oversharer", "https://github.com/demo.oversharer",
+            "https://demo-portfolio.invalid/resume.pdf"],
+  "site_meta": {"has_privacy_policy": false,
+                "third_party_scripts": ["google-analytics.js", "facebook.net/pixel.js"]},
+  "handle_reused_elsewhere": true
+}

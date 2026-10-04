@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Social Media Privacy Risk Assessment Framework</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <div class="brand"><div class="logo">&#128737;</div>
+    <div>Privacy Risk Assessment<small>Defensive Cybersecurity Framework</small></div></div>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="assessment.html">Assessment</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="/api/privacy-checklist?fmt=html" target="_blank">Checklist</a>
+    <a href="/docs" target="_blank">API Docs</a>
+  </div>
+</div></nav>
+
+<div class="container">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <span class="chip">Defensive &amp; Educational</span>
+    <span class="chip">Synthetic / Self-reported data only</span>
+    <span class="chip">Privacy by Design</span>
+    <h1>Assess your <span>social-media privacy exposure</span><br>before someone else does.</h1>
+    <p class="lead">A privacy-focused cybersecurity framework that measures profile exposure,
+      personal-information visibility, location privacy, content exposure, connection risk,
+      tagging risk, account security, third-party app access, social-engineering exposure and
+      digital footprint — then tells you exactly what to fix first.</p>
+    <a class="btn btn-primary" href="assessment.html">&#9654;&nbsp; Start Privacy Assessment</a>
+    <a class="btn btn-ghost" href="dashboard.html">View Privacy Dashboard</a>
+  </section>
+
+  <!-- ======================== KEY NUMBERS ========================= -->
+  <section class="grid g4">
+    <div class="card stat"><div class="k">Questionnaire</div><div class="v" id="qCount">45</div>
+      <div class="s">questions across 10 privacy categories</div></div>
+    <div class="card stat"><div class="k">Risk Categories</div><div class="v">10</div>
+      <div class="s">each scored 0–100 (higher = more exposure)</div></div>
+    <div class="card stat"><div class="k">Synthetic Records</div><div class="v">1,200</div>
+      <div class="s">fictional assessments for aggregate analytics</div></div>
+    <div class="card stat"><div class="k">Personal Data Stored</div><div class="v">0</div>
+      <div class="s">no phone, e-mail, address, DOB or passwords</div></div>
+  </section>
+
+  <!-- ==================== TWO SCORING MODELS ====================== -->
+  <section class="section">
+    <div class="section-head"><div><h2>Two complementary scoring models</h2>
+      <p>Both are educational. Neither guarantees real-world safety or compromise.</p></div></div>
+    <div class="grid g2">
+      <div class="card"><h3>A · PRIVACY ASSESSMENT SCORE</h3>
+        <p>The questionnaire-driven model. Ten categories (profile, personal information,
+           location, content, connections, tagging, account security, third-party apps,
+           social engineering, digital footprint) are each scored 0–100 and combined with
+           configurable weights (15/15/15/10/10/10/10/5/5/5 %) into one 0–100 score.
+           It measures <b>behaviour and configuration</b>.</p></div>
+      <div class="card"><h3>B · PRIVACY EXPOSURE RUBRIC</h3>
+        <p>The exposure-dimension model. Eight dimensions contribute capped points —
+           PII 25 · Geolocation/EXIF 20 · Children/Minors 15 · Workplace/School 10 ·
+           Weak Privacy Settings 10 · Linkage 10 · Handle Reuse 5 · Trackers 5 —
+           and the final score is <code>min(100, sum)</code>. It measures
+           <b>specific exposure dimensions</b>.</p></div>
+    </div>
+    <div class="warn" style="margin-top:14px"><b>Not equivalent.</b> The two models use
+      different mathematics (weighted mean vs capped additive points) and will normally
+      produce different numbers for the same person. They are complementary views, and
+      both are educational assumptions that should be validated before professional use.</div>
+  </section>
+
+  <!-- ======================== RISK MODEL ========================== -->
+  <section class="section">
+    <div class="section-head"><div><h2>The 0–100 privacy risk model</h2>
+      <p>Higher score = higher assessed exposure/risk.</p></div></div>
+    <div class="grid g4">
+      <div class="card"><span class="badge LOW">LOW · 0–20</span>
+        <p>Strong privacy configuration with few exposed attributes.</p></div>
+      <div class="card"><span class="badge MODERATE">MODERATE · 21–40</span>
+        <p>Reasonable baseline, several settings still worth tightening.</p></div>
+      <div class="card"><span class="badge HIGH">HIGH · 41–70</span>
+        <p>Multiple exposure points across categories; act on the priority list.</p></div>
+      <div class="card"><span class="badge CRITICAL">CRITICAL · 71–100</span>
+        <p>Extensive public exposure combined with weak account controls.</p></div>
+    </div>
+    <div class="warn" style="margin-top:16px"><b>Educational framework.</b>
+      This is an educational risk framework and does <b>not</b> guarantee that an account will or
+      will not be compromised. The weights and thresholds are educational assumptions and should be
+      validated before professional risk decisions.</div>
+  </section>
+
+  <!-- ========================= FEATURES =========================== -->
+  <section class="section">
+    <div class="section-head"><div><h2>What the framework produces</h2>
+      <p>Every output is deterministic and traceable back to your answers.</p></div></div>
+    <div class="grid g3">
+      <div class="card"><h3>&#128202; Privacy Risk Score</h3>
+        <p>Weighted 0–100 score with a full contribution breakdown per category and per question.</p></div>
+      <div class="card"><h3>&#129517; Category Scores</h3>
+        <p>Ten independent 0–100 scores visualised as a radar and bar chart.</p></div>
+      <div class="card"><h3>&#128269; Privacy Findings</h3>
+        <p>Severity-rated findings with an explanation and a recommended action for each.</p></div>
+      <div class="card"><h3>&#9989; Recommendations</h3>
+        <p>Personalised actions prioritised as IMMEDIATE, IMPORTANT and GOOD PRACTICE.</p></div>
+      <div class="card"><h3>&#128260; Improvement Simulator</h3>
+        <p>“What happens if I improve my settings?” — framework simulation of the risk reduction.</p></div>
+      <div class="card"><h3>&#128196; Privacy Report</h3>
+        <p>Presentation-ready HTML/PDF report containing scores and findings — never personal data.</p></div>
+    </div>
+  </section>
+
+  <!-- ==================== 20 PRIVACY AREAS ======================== -->
+  <section class="section">
+    <div class="section-head"><div><h2>The 20 privacy areas assessed</h2>
+      <p>Every area is covered by at least one questionnaire item.</p></div></div>
+    <div class="card"><div id="areaChips">
+      <span class="chip">Profile visibility</span><span class="chip">Personal-information exposure</span>
+      <span class="chip">Contact-information exposure</span><span class="chip">Location exposure</span>
+      <span class="chip">Workplace/education exposure</span><span class="chip">Birthday exposure</span>
+      <span class="chip">Family/relationship information</span><span class="chip">Post visibility</span>
+      <span class="chip">Friend/follower controls</span><span class="chip">Tagging permissions</span>
+      <span class="chip">Third-party application access</span><span class="chip">Account authentication</span>
+      <span class="chip">MFA usage</span><span class="chip">Password reuse awareness</span>
+      <span class="chip">Login alerts</span><span class="chip">Unknown connection requests</span>
+      <span class="chip">Suspicious links/messages</span><span class="chip">Photo metadata awareness</span>
+      <span class="chip">Historical posts</span><span class="chip">Social-engineering exposure</span>
+    </div></div>
+  </section>
+
+  <!-- ==================== CHILDREN / MINORS ======================= -->
+  <section class="section grid g2">
+    <div class="card"><h3>&#128118; Children &amp; minors in media</h3>
+      <p>A dedicated exposure dimension worth up to 15 rubric points. The framework asks
+         only whether child-related media, posts and school information are publicly
+         visible — it never asks for a child's name, school, address or any other
+         personal detail, and it never identifies anyone.</p></div>
+    <div class="card"><h3>&#128279; Linkage, handle reuse &amp; trackers</h3>
+      <p>Link-in-bio aggregators, publicly linked documents and repositories, re-used
+         usernames and third-party trackers on linked sites are assessed from
+         <b>self-reported</b> answers or voluntarily supplied synthetic export files.
+         No account is searched, enumerated or crawled.</p></div>
+  </section>
+
+  <!-- ===================== PRIVACY VS SECURITY ==================== -->
+  <section class="section grid g2">
+    <div class="card"><h3>Privacy vs Security</h3>
+      <p><b>Privacy</b> is about controlling <i>who can see what</i> about you — audience settings,
+         visibility of contact details, location sharing and digital footprint.<br><br>
+         <b>Security</b> is about protecting the account itself — MFA, login alerts, unique
+         passwords, session review and third-party app permissions.<br><br>
+         This framework scores both, because oversharing plus weak account controls is what
+         actually turns exposure into an incident.</p></div>
+    <div class="card"><h3>How oversharing increases social-engineering risk</h3>
+      <p>Publicly visible details make a scam message feel personal and legitimate. Categories that
+         most often get re-used in pretexting are:</p>
+      <span class="chip">Employer</span><span class="chip">College</span>
+      <span class="chip">Travel plans</span><span class="chip">Family references</span>
+      <span class="chip">Interests</span><span class="chip">Public events</span>
+      <p>The defence is conceptual, not technical: reduce what is public, verify unusual requests
+         through a second channel, and never share verification codes. This project deliberately
+         contains <b>no</b> attack scripts or personalised pretext messages.</p></div>
+  </section>
+
+  <!-- ==================== PRIVACY BY DESIGN ======================= -->
+  <section class="section">
+    <div class="section-head"><div><h2>Privacy by Design inside this application</h2>
+      <p>Each principle is implemented, not just documented.</p></div></div>
+    <div class="grid g4">
+      <div class="card"><h3>Data Minimisation</h3><p>Only scores, finding types and timestamps are
+        stored. Raw answers are never persisted.</p></div>
+      <div class="card"><h3>Purpose Limitation</h3><p>Stored data is used only for your report and
+        anonymised aggregate analytics.</p></div>
+      <div class="card"><h3>Least Privilege</h3><p>The API exposes read-only aggregates; admin-style
+        actions require a configured key.</p></div>
+      <div class="card"><h3>Privacy by Default</h3><p>No accounts, no tracking, no cookies, no
+        analytics scripts, no third-party CDNs.</p></div>
+      <div class="card"><h3>Transparency</h3><p>The scoring model, weights and thresholds are open
+        and fully explainable.</p></div>
+      <div class="card"><h3>User Control</h3><p><code>DELETE /api/assessment/{id}</code> erases an
+        assessment on request.</p></div>
+      <div class="card"><h3>Retention Limitation</h3><p>Nothing that could identify you is retained —
+        there is nothing to expire.</p></div>
+      <div class="card"><h3>Secure Processing</h3><p>Strict input validation, output escaping,
+        security headers and rate limiting.</p></div>
+    </div>
+  </section>
+
+  <!-- ====================== ETHICAL SCOPE ========================= -->
+  <section class="section">
+    <div class="card">
+      <h3>Ethical scope</h3>
+      <p>This project is designed for defensive cybersecurity and privacy education. It uses
+      synthetic or voluntarily provided assessment responses and does <b>not</b> scrape, track or
+      profile real social-media users. It never asks for your actual phone number, e-mail address,
+      postal address, birth date or password — only whether such information is publicly visible.</p>
+    </div>
+  </section>
+
+  <footer class="site">Social Media Privacy Risk Assessment Framework · v1.0 ·
+    Defensive cybersecurity &amp; privacy education · Synthetic / self-reported data only</footer>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  // Show the real questionnaire size straight from the API (graceful fallback).
+  API.questionnaire().then(d => { document.getElementById("qCount").textContent = d.total_questions; })
+     .catch(() => {});
+</script>
+</body>
+</html>

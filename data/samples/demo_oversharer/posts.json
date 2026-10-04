@@ -1,0 +1,18 @@
+[
+  {"id": "p1", "text": "Daily 7am run at the Demo Park!", "created_at": "2026-07-11T01:30:00Z",
+   "hashtags": ["#5k"], "mentions": [], "geo": {"lat": 12.97, "lon": 77.59},
+   "media": {"type": "image", "has_faces": true, "is_child_present": true,
+             "exif": {"make": "Apple", "model": "iPhone 14", "created_local": "2026-07-11 07:01",
+                      "gps": "12.97,77.59"}}},
+  {"id": "p2", "text": "New badge pickup at FICTIONAL-CORP HQ, 3rd floor",
+   "created_at": "2026-07-12T12:00:00Z", "hashtags": ["#work"], "mentions": ["@fictionalcorp"],
+   "geo": null, "media": {"type": "none"}},
+  {"id": "p3", "text": "School drop every morning with my kid before office #school",
+   "created_at": "2026-07-13T03:15:00Z", "hashtags": ["#school"], "mentions": [],
+   "geo": {"lat": 12.95, "lon": 77.61},
+   "media": {"type": "image", "has_faces": true, "is_child_present": true, "exif": {}}},
+  {"id": "p4", "text": "Vacation next week - house will be empty, back on the 20th!",
+   "created_at": "2026-07-14T09:00:00Z", "hashtags": ["#travel"], "mentions": [],
+   "geo": null, "media": {"type": "image", "has_faces": false, "is_child_present": false,
+                          "exif": {"created_local": "2026-07-14 14:30"}}}
+]
